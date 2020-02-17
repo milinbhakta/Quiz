@@ -1,0 +1,11 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <a mat-button  routerLink="/" style="font-size: x-large;">My Quiz</a>
+        <a mat-button  routerLink="/play" style="font-size: medium;">Play</a>
+        <span style="flex: 1 1 auto;"></span>
+        <a mat-button *ngIf="!auth.isAuthenticated" routerLink="/register" style="font-size: medium;">Register</a>
+        <a mat-button *ngIf="!auth.isAuthenticated" routerLink="/login" style="font-size: medium;">Login</a>
+        <a mat-button *ngIf="auth.isAuthenticated"  style="font-size: medium;">{{ auth.username}}</a>
+        <a mat-button *ngIf="auth.isAuthenticated" (click)="auth.logout()" style="font-size: medium;">Logout</a>
+    </mat-toolbar-row>
+</mat-toolbar>

@@ -1,0 +1,9 @@
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+mat-card {
+    margin: 10px;
+}
+
+mat-form-field{
+    display: block;
+}

@@ -1,0 +1,25 @@
+<mat-card>
+    <mat-accordion>
+        <mat-expansion-panel *ngFor="let question of questions;let i =index" [expanded]="step === i" (opened)="setStep(i)" hideToggle="true" >
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    {{ question.ques }}
+                </mat-panel-title>
+                <mat-panel-description>
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" [(ngModel)]="question.selectedAnswer">
+                <mat-radio-button class="example-radio-button" *ngFor="let answer of question.answers" [value]="answer">
+                    {{answer}}
+                </mat-radio-button>
+            </mat-radio-group>
+            <mat-action-row>
+                <button mat-button color="warn" (click)="prevStep()">Previous</button>
+                <button mat-button color="primary" (click)="nextStep()">Next</button>
+            </mat-action-row>
+        </mat-expansion-panel>
+    </mat-accordion>
+    <mat-card-actions align="end">
+        <button mat-stroked-button color="accent"  (click)="finish()">Finish</button>
+    </mat-card-actions>
+</mat-card>

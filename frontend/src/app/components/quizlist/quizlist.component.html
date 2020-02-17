@@ -1,0 +1,12 @@
+<mat-card>
+    <mat-card-title>Quiz List</mat-card-title>
+    <mat-card-content>
+        <mat-nav-list role="list" *ngFor="let quiz of quizzes">
+
+            <mat-list-item role="listitem" (click)="api.selectQuiz(quiz)">{{ quiz.title }}</mat-list-item>
+            
+        </mat-nav-list>
+    </mat-card-content>
+    <mat-card-actions>
+    </mat-card-actions>
+</mat-card>
